@@ -5,6 +5,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  @apply font-amarante
+.main{
+  @apply flex flex-col h-screen bg-gray-100 font-amarante text-2xl;
+}
+
+.pages{
+  @apply flex-1 flex;
+}
+
+.sideBar{
+  @apply p-2 bg-white w-60 flex flex-col md:flex;
+}
+
+.mainContent{
+  @apply flex-1 p-2;
 }
