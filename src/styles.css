@@ -6,11 +6,11 @@
 @tailwind utilities;
 
 .main{
-  @apply h-screen bg-gray-100 font-amarante text-2xl;
+  @apply h-screen  bg-gray-200 font-amarante text-2xl;
 }
 
 .pages{
-  @apply grid md:columns-12;
+  @apply grid md:columns-12 ;
 }
 
 .mainContent{
