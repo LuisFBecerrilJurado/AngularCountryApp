@@ -34,10 +34,14 @@
   @apply relative m-0 list-none px-[0.2rem] py-3
 }
 
-.active{
-  @apply bg-slate-300 text-black outline-none 
+.activeLink{
+  @apply bg-slate-300 text-black outline-none
 }
 
 .sideBarContent{
   @apply bg-zinc-800 text-white h-full col-span-1 text-2xl
+}
+
+.activeIcon{
+  @apply stroke-sky-600
 }
