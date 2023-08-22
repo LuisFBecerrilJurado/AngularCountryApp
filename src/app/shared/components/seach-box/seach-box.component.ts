@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'shared-seach-box',
@@ -9,4 +9,11 @@ import { Component, Input } from '@angular/core';
 export class SeachBoxComponent {
   @Input()
   public placeHolder: string = '';
+
+  @Output()
+  public onValue = new EventEmitter<string>()
+
+  searchTag( value: string): void{
+    this.onValue.emit(value);
+  }
 }
