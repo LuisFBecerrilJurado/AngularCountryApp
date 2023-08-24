@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
 import { compileNgModule } from '@angular/compiler';
 import { switchMap } from 'rxjs';
+import { Country } from '../../interfaces/country';
+import { Translation } from '../../interfaces/translation';
 
 @Component({
   selector: 'countries-country-page',
@@ -11,9 +13,13 @@ import { switchMap } from 'rxjs';
   ]
 })
 export class CountryPageComponent implements OnInit {
+
+  public country?: Country;
+  public translations: Translation[] = [];
+
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router : Router,
+    private router: Router,
     private countriesService: CountriesService,
   ) { }
 
@@ -22,8 +28,12 @@ export class CountryPageComponent implements OnInit {
       .pipe(
         switchMap(({ id }) => this.countriesService.searchCountryById(id)))
       .subscribe(country => {
-        
+
+        if (!country) return this.router.navigateByUrl('');
+        return this.country = country
+        // return;
       });
   }
 
 }
+

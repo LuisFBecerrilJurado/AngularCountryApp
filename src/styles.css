@@ -47,11 +47,11 @@
 }
 
 .table-section{
-  @apply overflow-hidden rounded-lg bg-white p-1 shadow-lg
+  @apply flex-wrap rounded-lg bg-white p-1 shadow-lg
 }
 
 .table-definition{
-  @apply  overflow-x-auto rounded-lg
+  @apply  flex-wrap rounded-lg
 }
 
 .table-table{
@@ -71,5 +71,13 @@
 }
 
 .table-rows-content{
-  @apply text-xs font-semibold text-center text-gray-500 uppercase dark:border-gray-700 bg-white hover:bg-slate-200 overflow-x-scroll
+  @apply text-xs font-semibold text-center text-gray-500 uppercase dark:border-gray-700 bg-white hover:bg-slate-200 flex-wrap
+}
+
+.radioInput{
+  @apply flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-1 sm:px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 transition-all duration-500 ease-in-out
+}
+
+.badge{
+  @apply bg-indigo-100 text-white text-base font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-indigo-900
 }

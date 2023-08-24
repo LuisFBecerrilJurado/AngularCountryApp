@@ -14,7 +14,7 @@
 </div>
 
 <ng-template #table>
-  <div class="table-section">
+  <div class="table-section" *ngIf="getUrl() != '/countries/by-region'">
     <div class="table-definition">
       <table class="table-table">
         <thead>
@@ -39,6 +39,32 @@
             </td>
             <td class="px-1 py-3" >
               {{ country.population | number}}
+            </td>
+            <td>
+              <a href="" class="underline text-blue-600 italic">Ver mas</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="table-section" *ngIf="getUrl() === '/countries/by-region'">
+    <div class="table-definition">
+      <table class="table-table">
+        <thead>
+          <tr class="table-title-section">
+            <th class="table-title-content">Bandera</th>
+            <th class="table-title-content">Pais</th>
+            <th class="table-title-content">Info</th>
+          </tr>
+        </thead>
+        <tbody class="table-rows">
+          <tr class="table-rows-content" *ngFor="let country of countries">
+            <td class="px-1 py-3" >
+              <img [src]="country.flags.svg" [alt]="country.flag" class="h-6 mx-auto">
+            </td>
+            <td class="px-1 py-3" >
+              {{ country.name.common }}
             </td>
             <td>
               <a href="" class="underline text-blue-600 italic">Ver mas</a>
