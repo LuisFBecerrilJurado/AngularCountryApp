@@ -1,2 +1,11 @@
-<p>by-country-page works!</p>
+<div class="flex flex-col mt-3 w-fit  sm:w-11/12 sm:mx-auto">
+  <shared-seach-box
+    placeHolder="Buscar por Pais"
+    (onValue)="searchByCountry($event)">
+  </shared-seach-box>
+  <div class="table-area">
+    <shared-country-table [countries]="countries">
+    </shared-country-table>
+  </div>
+</div>
 

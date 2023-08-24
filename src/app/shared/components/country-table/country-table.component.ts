@@ -9,11 +9,11 @@ import { Country } from 'src/app/countries/interfaces/country';
   styles: [
   ]
 })
-export class CountryTableComponent {
+export class CountryTableComponent  {
   @Input()
   public countries: Country[] = []
 
-  constructor(private router: Router) { console.log(router.url) }
+  constructor(private router: Router) {}
 
   getUrl() {
     return this.router.url;

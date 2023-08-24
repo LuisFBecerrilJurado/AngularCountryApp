@@ -1,8 +1,14 @@
 <div role="alert" *ngIf="countries.length === 0; else table"
   class="rounded-xl border border-red-500 bg-red-100 p-4 shadow-xl mb-4">
   <div class="flex items-start gap-4">
-    <div class="flex-1">
+    <div class="flex-1" *ngIf="getUrl() === '/countries/by-capital'">
       <strong class="block font-medium text-red-700"> ! No hay capitales que mostrar ¡ </strong>
+    </div>
+    <div class="flex-1" *ngIf="getUrl() === '/countries/by-country'">
+      <strong class="block font-medium text-red-700"> ! No hay paises que mostrar ¡ </strong>
+    </div>
+    <div class="flex-1" *ngIf="getUrl() === '/countries/by-region'">
+      <strong class="block font-medium text-red-700"> ! No hay region que mostrar ¡ </strong>
     </div>
   </div>
 </div>
@@ -10,12 +16,12 @@
 <ng-template #table>
   <div class="table-section">
     <div class="table-definition">
-      <table class="table-table"  *[ngSwitch]="getUrl()">
+      <table class="table-table">
         <thead>
           <tr class="table-title-section">
             <th class="table-title-content">Bandera</th>
+            <th class="table-title-content">Pais</th>
             <th class="table-title-content">Nombre</th>
-            <th class="table-title-content">País</th>
             <th class="table-title-content">Población</th>
             <th class="table-title-content">Info</th>
           </tr>
@@ -26,13 +32,13 @@
               <img [src]="country.flags.svg" [alt]="country.flag" class="h-6 mx-auto">
             </td>
             <td class="px-1 py-3" >
-              {{country.capital}}
-            </td>
-            <td class="px-1 py-3" >
               {{ country.name.common }}
             </td>
             <td class="px-1 py-3" >
-              {{ country.population | number }}
+              {{country.capital}}
+            </td>
+            <td class="px-1 py-3" >
+              {{ country.population | number}}
             </td>
             <td>
               <a href="" class="underline text-blue-600 italic">Ver mas</a>
@@ -44,22 +50,3 @@
   </div>
 </ng-template>
 
-
-<!-- <thead *ngIf="getUrl() === '/countries/by-country'">
-  <tr class="table-title-section">
-    <th class="table-title-content">Bandera</th>
-    <th class="table-title-content">1</th>
-    <th class="table-title-content">1</th>
-    <th class="table-title-content">1</th>
-    <th class="table-title-content">1</th>
-  </tr>
-</thead>
-<thead *ngIf="getUrl() === '/countries/by-region'">
-  <tr class="table-title-section">
-    <th class="table-title-content">Bandera</th>
-    <th class="table-title-content">Nombre</th>
-    <th class="table-title-content">País</th>
-    <th class="table-title-content">Población</th>
-    <th class="table-title-content">2</th>
-  </tr>
-</thead> -->
