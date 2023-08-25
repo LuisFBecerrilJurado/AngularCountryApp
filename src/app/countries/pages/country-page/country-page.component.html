@@ -11,8 +11,8 @@
 
 <div *ngIf="country; else loading">
   <div class="table-section shadow-xl">
-    <div class="flex flex-col md:flex-row justify-between mx-5 mb-10">
-      <div class="flex flex-col text-2xl py-4 my-auto">
+    <div class="flex flex-col md:flex-row justify-between mx-5 mb-8">
+      <div class="flex flex-col text-2xl py-4 my-auto w-2/3">
         <div *ngIf="country.name.nativeName.spa; else eng" >
           <h1>
             Nombre Oficial: {{country.name.nativeName.spa.official}}
@@ -123,6 +123,14 @@
               </td>
               <td class="px-1 py-3" >
                 {{ country.borders }}
+              </td>
+            </tr>
+            <tr class="table-rows-content">
+              <td class="px-1 py-3" >
+                Code:
+              </td>
+              <td class="px-1 py-3" >
+                {{ country.cca3 }}
               </td>
             </tr>
           </tbody>

@@ -29,7 +29,7 @@
         <tbody class="table-rows">
           <tr class="table-rows-content" *ngFor="let country of countries">
             <td class="px-1 py-3" >
-              <img [src]="country.flags.svg" [alt]="country.flag" class="h-6 mx-auto">
+              <img [src]="country.flags.svg" [alt]="country.flag" class="h-4 mx-auto">
             </td>
             <td class="px-1 py-3" >
               {{ country.name.common }}
@@ -41,7 +41,7 @@
               {{ country.population | number}}
             </td>
             <td>
-              <a href="" class="underline text-blue-600 italic">Ver mas</a>
+              <a [routerLink]="['/countries/by', country.cca3]" class="underline text-blue-600 italic">Ver mas</a>
             </td>
           </tr>
         </tbody>
@@ -67,7 +67,7 @@
               {{ country.name.common }}
             </td>
             <td>
-              <a href="" class="underline text-blue-600 italic">Ver mas</a>
+              <a [routerLink]="['/countries/by', country.cca3]" class="underline text-blue-600 italic">Ver mas</a>
             </td>
           </tr>
         </tbody>

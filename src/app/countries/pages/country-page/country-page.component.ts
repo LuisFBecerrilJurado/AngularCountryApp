@@ -4,7 +4,7 @@ import { CountriesService } from '../../services/countries.service';
 import { compileNgModule } from '@angular/compiler';
 import { switchMap } from 'rxjs';
 import { Country } from '../../interfaces/country';
-import { Translation } from '../../interfaces/translation';
+
 
 @Component({
   selector: 'countries-country-page',
@@ -15,7 +15,7 @@ import { Translation } from '../../interfaces/translation';
 export class CountryPageComponent implements OnInit {
 
   public country?: Country;
-  public translations: Translation[] = [];
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,7 +31,6 @@ export class CountryPageComponent implements OnInit {
 
         if (!country) return this.router.navigateByUrl('');
         return this.country = country
-        // return;
       });
   }
 
