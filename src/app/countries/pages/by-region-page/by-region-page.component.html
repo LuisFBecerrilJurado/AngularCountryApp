@@ -2,6 +2,7 @@
   <shared-radio-search (onValue)="searchByRegion($event)">
   </shared-radio-search>
   <div class="table-area">
+    <shared-loader *ngIf="isLoading"></shared-loader>
     <shared-country-table [countries]="countries">
     </shared-country-table>
   </div>

@@ -9,7 +9,7 @@ import { SeachBoxComponent } from './components/seach-box/seach-box.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
 import { RadioSearchComponent } from './components/radio-search/radio-search.component';
-
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { RadioSearchComponent } from './components/radio-search/radio-search.com
     SideBarComponent,
     CountryTableComponent,
     RadioSearchComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +33,8 @@ import { RadioSearchComponent } from './components/radio-search/radio-search.com
     SeachBoxComponent,
     SideBarComponent,
     CountryTableComponent,
-    RadioSearchComponent
+    RadioSearchComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule { }

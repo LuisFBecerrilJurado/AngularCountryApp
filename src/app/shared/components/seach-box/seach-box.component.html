@@ -1,7 +1,9 @@
+<!-- (keyup.enter)="searchTag(txtInput.value)" -->
 <div class="bg-white rounded-full border-none p-3 mb-4 mr-4 md:mr-0 shadow-md">
   <input type="text" [placeholder]="placeHolder"
       class="p-1 focus:outline-none text-base bg-inherit flex items-center"
-      #txtInput (keyup.enter)="searchTag(txtInput.value)">
+      #txtInput (keyup)="onKeySearch(txtInput.value)"
+  >
 </div>
 
 

@@ -4,6 +4,7 @@
     (onValue)="searchByCountry($event)">
   </shared-seach-box>
   <div class="table-area">
+    <shared-loader *ngIf="isLoading"></shared-loader>
     <shared-country-table [countries]="countries">
     </shared-country-table>
   </div>

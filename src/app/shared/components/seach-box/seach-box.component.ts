@@ -16,4 +16,8 @@ export class SeachBoxComponent {
   searchTag( value: string): void{
     this.onValue.emit(value);
   }
+
+  onKeySearch(searchTerm: string):void {
+
+  }
 }
