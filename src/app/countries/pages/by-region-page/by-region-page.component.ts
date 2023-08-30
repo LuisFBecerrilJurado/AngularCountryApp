@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Country } from '../../interfaces/country';
 import { CountriesService } from '../../services/countries.service';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'countries-by-region-page',

@@ -1,7 +1,7 @@
 <div class="flex flex-col mt-3 w-fit  sm:w-11/12 sm:mx-auto">
   <shared-seach-box
     placeHolder="Buscar por Pais"
-    (onValue)="searchByCountry($event)">
+    (onDebounce)="searchByCountry($event)">
   </shared-seach-box>
   <div class="table-area">
     <shared-loader *ngIf="isLoading"></shared-loader>
