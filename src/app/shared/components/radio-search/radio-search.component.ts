@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
-type Region = 'Africa' | 'Americas' | 'Asia' | 'Europe' | 'Oceania';
+import { Region } from 'src/app/countries/interfaces/region.type';
 
 @Component({
   selector: 'shared-radio-search',
