@@ -1,8 +1,10 @@
+import { Region } from 'src/app/countries/interfaces/region.type';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, delay, map, of, tap } from 'rxjs';
 import { Country } from '../interfaces/country';
 import { CacheStore } from '../interfaces/cache-storage.interface';
+
 
 
 @Injectable({
@@ -18,6 +20,10 @@ export class CountriesService {
   };
 
   constructor(private http: HttpClient) { }
+
+  private saveToLocalStorage() { }
+
+  private loadFromLocalStorage(){}
 
   /**
    * Sends an HTTP GET request to the specified URL and returns an observable of an array of Country objects.
@@ -63,7 +69,9 @@ export class CountriesService {
    */
   searchCountry(term: string): Observable<Country[]> {
     const url = `${this.apiUrl}/name/${term}`;
-    return this.getCountriesRequest(url);
+    return this.getCountriesRequest(url).pipe(
+      tap(countries => this.cacheStorage.byCountries = {term,countries})
+    )
   }
 
   /**
@@ -71,8 +79,10 @@ export class CountriesService {
    * @param region The region to search for.
    * @returns An observable of an array of countries matching the region.
    */
-  searchRegion(region: string): Observable<Country[]> {
+  searchRegion(region: Region): Observable<Country[]> {
     const url = `${this.apiUrl}/region/${region}`;
-    return this.getCountriesRequest(url);
+    return this.getCountriesRequest(url).pipe(
+      tap(countries => this.cacheStorage.byRegion = {region,countries})
+    )
   }
 }

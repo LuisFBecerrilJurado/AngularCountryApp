@@ -8,7 +8,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SeachBoxComponent } from './components/seach-box/seach-box.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
-import { RadioSearchComponent } from './components/radio-search/radio-search.component';
 import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { LoaderComponent } from './components/loader/loader.component';
     SeachBoxComponent,
     SideBarComponent,
     CountryTableComponent,
-    RadioSearchComponent,
     LoaderComponent,
   ],
   imports: [
@@ -33,7 +31,6 @@ import { LoaderComponent } from './components/loader/loader.component';
     SeachBoxComponent,
     SideBarComponent,
     CountryTableComponent,
-    RadioSearchComponent,
     LoaderComponent
   ]
 })

@@ -3,6 +3,7 @@
   <input type="text" [placeholder]="placeHolder"
       class="p-1 focus:outline-none text-base bg-inherit flex items-center"
       #txtInput (keyup)="onKeySearch(txtInput.value)"
+      [value]="initialValue"
   >
 </div>
 
